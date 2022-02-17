@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TaskCard from "../components/TaskCard";
+import TasksForms from "../components/TasksForms";
 import TaskTableHead from "../components/TaskTableHead";
 
 function Home () {
@@ -19,7 +20,7 @@ function Home () {
   return (
     <div>
       <h1>Task List</h1>
-
+      <TasksForms />
       { isLoading ? <h1>Carregando...</h1>
       : (
         <table>
