@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TaskCard from "../components/TaskCard";
+import TaskTableHead from "../components/TaskTableHead";
 
 function Home () {
   const [tasks, setTasks] = useState([]);
@@ -21,7 +22,8 @@ function Home () {
 
       { isLoading ? <h1>Carregando...</h1>
       : (
-        <ul>
+        <table>
+          <TaskTableHead />
           {tasks.map(({ _id, taskName, createdDate, status }, index) => (
             <TaskCard
               key={_id}
@@ -32,7 +34,7 @@ function Home () {
               status={status}
             />
           ))}
-        </ul>
+        </table>
       )}
     </div>
   );
